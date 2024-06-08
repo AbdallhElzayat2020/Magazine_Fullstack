@@ -5,7 +5,9 @@
     use App\Http\Controllers\Controller;
     use App\Http\Requests\HandelLoginRequest;
     use App\Models\admin;
+    use Illuminate\Http\RedirectResponse;
     use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Auth;
 
     class AdminAuthController extends Controller
     {
@@ -23,4 +25,16 @@
 
             return redirect()->route("admin.dashboard");
         }
+
+        public function logout( Request $request ): RedirectResponse
+        {
+            Auth::guard('admin')->logout();
+
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+
+            return redirect()->route('admin.login')->with('success' , 'Logout successfully');
+        }
+
     }
