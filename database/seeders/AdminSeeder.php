@@ -15,10 +15,12 @@
         {
             $admin = new Admin();
 
+            $admin->image = '/test';
             $admin->name = 'Super User';
             $admin->email = 'admin@gmail.com';
             $admin->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; //password
-            $admin->image = '/test';
+//            $admin->password = '12345678'; //password
+
             $admin->status = 1;
             $admin->save();
         }

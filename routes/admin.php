@@ -10,7 +10,6 @@
         Route::post('login' , [ AdminAuthController::class , 'handleLogin' ])->name('handle-login'); //admin.handle-login
     });
 
-
     Route::group([ 'prefix' => 'admin' , 'as' => 'admin.' , 'middleware' => [ 'admin' ] ] , function () {
         Route::get("dashboard" , [ DashboardController::class , "index" ])->name('dashboard');
     });
