@@ -2,17 +2,16 @@
 
     namespace App\Http\Controllers\Admin;
 
-    use App\Http\Controllers\Controller;
-    use App\Http\Requests\HandelLoginRequest;
-    use App\Http\Requests\SendResetLinkRequest;
-    use App\Mail\AdminSendResetLinkMail;
-    use App\Models\admin;
-    use Illuminate\Http\RedirectResponse;
-    use Illuminate\Http\Request;
-    use Illuminate\Support\Facades\Auth;
-    use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\HandelLoginRequest;
+use App\Http\Requests\SendResetLinkRequest;
+use App\Mail\AdminSendResetLinkMail;
+use App\Models\Admin;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
-    class AdminAuthController extends Controller
+class AdminAuthController extends Controller
     {
         /**
          * Display a listing of the resource.

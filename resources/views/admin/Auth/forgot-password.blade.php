@@ -63,9 +63,7 @@
                                 </i>
                             @endif
 
-
-                            {{--                            Notification for success Work --}}
-
+                            {{--Notification for success Work --}}
                             <form method="POST" action="{{ route('admin.forgot-password.send') }}"
                                   class="needs-validation" novalidate="">
                                 @csrf
