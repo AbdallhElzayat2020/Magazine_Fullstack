@@ -33,17 +33,14 @@
                 ]) ,
             ];
         }
-
         public function authenticate(): void
         {
-
             if ( !Auth::guard('admin')->attempt($this->only('email' , 'password') , $this->boolean('remember'))) {
                 throw ValidationException::withMessages([
                     'email' => trans('auth.failed') ,
                 ]);
             }
         }
-
 
 //        if you want to Customize your error messages
 //        public function messages(): array

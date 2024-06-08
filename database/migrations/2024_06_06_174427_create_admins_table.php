@@ -22,7 +22,6 @@
                 $table->timestamps();
             });
         }
-
         /**
          * Reverse the migrations.
          */
