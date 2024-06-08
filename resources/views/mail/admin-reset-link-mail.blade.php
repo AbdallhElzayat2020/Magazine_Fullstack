@@ -335,7 +335,8 @@
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                             <tbody>
                                             <tr>
-                                                <td><a href="{{route('reset-password',$token)}}" target="_blank">Call To Action</a>
+                                                <td><a href="{{route('admin.reset-password',$token)}}"
+                                                       target="_blank">Call To Action</a>
                                                 </td>
                                             </tr>
                                             </tbody>
