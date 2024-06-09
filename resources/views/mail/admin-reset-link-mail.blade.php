@@ -319,7 +319,7 @@
             <div class="content">
 
                 <!-- START CENTERED WHITE CONTAINER -->
-{{--                <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>--}}
+                {{--                <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>--}}
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main">
 
                     <!-- START MAIN CONTENT AREA -->
@@ -336,7 +336,7 @@
                                             <tbody>
                                             <tr>
                                                 <td><a href="{{route('admin.reset-password',$token)}}"
-                                                       target="_blank">Call To Action</a>
+                                                       target="_blank">Click Here To Reset Password</a>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -353,26 +353,6 @@
 
                     <!-- END MAIN CONTENT AREA -->
                 </table>
-
-                <!-- START FOOTER -->
-                <div class="footer">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td class="content-block">
-                                <span class="apple-link">Company Inc, 7-11 Commercial Ct, Belfast BT1 2NB</span>
-                                <br> Don't like these emails? <a href="http://htmlemail.io/blog">Unsubscribe</a>.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="content-block powered-by">
-                                Powered by <a href="http://htmlemail.io">HTMLemail.io</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <!-- END FOOTER -->
-
                 <!-- END CENTERED WHITE CONTAINER -->
             </div>
         </td>

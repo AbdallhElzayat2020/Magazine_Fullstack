@@ -2,11 +2,11 @@
 
     namespace App\Mail;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Mail\Mailables\Envelope;
+    use Illuminate\Bus\Queueable;
+    use Illuminate\Mail\Mailable;
+    use Illuminate\Mail\Mailables\Content;
+    use Illuminate\Queue\SerializesModels;
+    use Illuminate\Mail\Mailables\Envelope;
 
     class AdminSendResetLinkMail extends Mailable
     {
@@ -16,10 +16,12 @@ use Illuminate\Mail\Mailables\Envelope;
          * Create a new message instance.
          */
         public $token;
+        public $email;
 
-        public function __construct( $token )
+        public function __construct( $token , $email )
         {
             $this->token = $token;
+            $this->$email = $email;
         }
 
         /**
