@@ -50,21 +50,39 @@
         {
 //            dd($request->all());
             $token = \Str::random(64);
+
             $admin = Admin::where('email' , $request->email)->first();
+
             $admin->remember_token = $token;
+
             $admin->save();
 
             Mail::to($request->email)->send(new AdminSendResetLinkMail($token , $request->email));
+
             return redirect()->back()->with('success' , 'A mail Has Been Send To Your Email Please Check');
         }
 
         public function resetPassword( $token )
         {
-            return view('admin.auth.reset-password');
+            return view('admin.auth.reset-password' , compact('token'));
         }
 
-        public function handleResetPassword( $token , AdminResetPasswordRequest $request )
+        public function handleResetPassword( AdminResetPasswordRequest $request )
         {
+//            $admin = Admin::where([ 'remember_token' => $request->token ]);
+            $admin = Admin::where([ 'email' => $request->email , 'remember_token' => $request->token ])->first();
 
+            if ( !$admin) {
+//                return redirect()->route("admin.login")->with("error" , "");
+                return back()->with("error" , "  token is invalid");
+
+                $admin->password = bcrypt($request->password);
+
+                $admin->remember_token = null;
+                
+                $admin->save();
+
+                return redirect()->route("admin.login")->with("success" , "Password Has Been Changed");
+            }
         }
     }

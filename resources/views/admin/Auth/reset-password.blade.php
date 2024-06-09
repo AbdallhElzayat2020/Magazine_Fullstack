@@ -42,7 +42,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div
-                        class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                    class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                     <div class="login-brand">
                         <img src="{{ asset('admin/assets/img/stisla-fill.svg') }}" alt="logo" width="100"
                              class="shadow-light rounded-circle">
@@ -55,17 +55,19 @@
                             <form method="POST" action="{{ route('admin.reset-password.send') }}"
                                   class="needs-validation" novalidate="">
                                 @csrf
-{{--                                <div class="form-group">--}}
-{{--                                    <label for="email">Email</label>--}}
-{{--                                    <input id="email" type="email" class="form-control" name="email"--}}
-{{--                                           tabindex="1" required autofocus value="{{@request()->email}}">--}}
-{{--                                    @error('email')--}}
-{{--                                    <code>{{ $message }}</code>--}}
-{{--                                    @enderror--}}
-{{--                                    <div class="invalid-feedback">--}}
-{{--                                        Please fill in your email--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                {{--                                <div class="form-group">--}}
+                                {{--                                    <label for="email">Email</label>--}}
+                                {{--                                    <input id="email" type="email" class="form-control" name="email"--}}
+                                {{--                                           tabindex="1" required autofocus value="{{@request()->email}}">--}}
+                                {{--                                    @error('email')--}}
+                                {{--                                    <code>{{ $message }}</code>--}}
+                                {{--                                    @enderror--}}
+                                {{--                                    <div class="invalid-feedback">--}}
+                                {{--                                        Please fill in your email--}}
+                                {{--                                    </div>--}}
+                                {{--                                </div>--}}
+                                <input id="token" type="hidden" class="form-control" name="token"
+                                       tabindex="1" required value="{{$token}}" autofocus>
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input id="password" type="password" class="form-control" name="password"
@@ -99,7 +101,7 @@
 
                     <div class="simple-footer">
                         Developed By &copy; <span class="text-primary ">Abdallh Elzayat</span> <span
-                                id="current-year"></span>
+                            id="current-year"></span>
                         <script>
                             document.getElementById("current-year").textContent = new Date().getFullYear();
                         </script>

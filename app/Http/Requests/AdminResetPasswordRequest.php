@@ -23,7 +23,8 @@ class AdminResetPasswordRequest extends FormRequest
     {
         return [
 //            'email' => ['required', 'exists:admins,email','email'],
-            'password' => ['required', 'string', 'min:8', 'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'],
+//            'password' => ['required', 'string', 'min:8', 'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
             'password_confirmation'=>['required'],
         ];
     }

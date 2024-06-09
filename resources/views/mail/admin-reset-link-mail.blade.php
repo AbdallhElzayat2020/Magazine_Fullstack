@@ -340,7 +340,8 @@
                                             <tbody>
                                             <tr>
                                                 <td>
-                                                    <a href="{{ route('admin.reset-password', ['token' => $token, 'email' => $email]) }}"
+                                                    <a href="{{ route('admin.reset-password', ['token' => $token]) }}"
+                                                       {{-- <a href="{{ route('admin.reset-password', ['token' => $token, 'email' => $email]) }}"--}}
                                                        target="_blank">Click Here To Reset Password</a>
                                                 </td>
                                             </tr>
