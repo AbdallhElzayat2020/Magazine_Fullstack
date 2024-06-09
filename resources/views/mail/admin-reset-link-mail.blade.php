@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -235,6 +236,7 @@
     ------------------------------------- */
 
         @media only screen and (max-width: 640px) {
+
             .main p,
             .main td,
             .main span {
@@ -311,6 +313,7 @@
         }
     </style>
 </head>
+
 <body>
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
     <tr>
@@ -319,7 +322,7 @@
             <div class="content">
 
                 <!-- START CENTERED WHITE CONTAINER -->
-                {{--                <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>--}}
+                {{--                <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span> --}}
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main">
 
                     <!-- START MAIN CONTENT AREA -->
@@ -332,10 +335,12 @@
                                 <tbody>
                                 <tr>
                                     <td align="left">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <table role="presentation" border="0" cellpadding="0"
+                                               cellspacing="0">
                                             <tbody>
                                             <tr>
-                                                <td><a href="{{route('admin.reset-password',$token)}}"
+                                                <td>
+                                                    <a href="{{ route('admin.reset-password', ['token' => $token, 'email' => $email]) }}"
                                                        target="_blank">Click Here To Reset Password</a>
                                                 </td>
                                             </tr>
@@ -345,9 +350,9 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <p>This is a really simple email template. It's sole purpose is to get the recipient to
-                               click the button with no distractions.</p>
-                            <p>Good luck! Hope it works.</p>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore est nesciunt eveniet
+                               eos harum tempora, repudiandae ea molestiae sunt doloribus magni magnam officia.
+                               Iusto illo quidem laborum commodi facere quia!</p>
                         </td>
                     </tr>
 
@@ -360,4 +365,5 @@
     </tr>
 </table>
 </body>
+
 </html>

@@ -3,6 +3,7 @@
     namespace App\Http\Controllers\Admin;
 
     use App\Http\Controllers\Controller;
+    use App\Http\Requests\AdminResetPasswordRequest;
     use App\Http\Requests\HandelLoginRequest;
     use App\Http\Requests\SendResetLinkRequest;
     use App\Mail\AdminSendResetLinkMail;
@@ -53,11 +54,16 @@
             $admin->remember_token = $token;
             $admin->save();
 
-            Mail::to($request->email)->send(new AdminSendResetLinkMail($token));
+            Mail::to($request->email)->send(new AdminSendResetLinkMail($token , $request->email));
             return redirect()->back()->with('success' , 'A mail Has Been Send To Your Email Please Check');
         }
 
-        public function resetPassword()
+        public function resetPassword( $token )
+        {
+            return view('admin.auth.reset-password');
+        }
+
+        public function handleResetPassword( $token , AdminResetPasswordRequest $request )
         {
 
         }
