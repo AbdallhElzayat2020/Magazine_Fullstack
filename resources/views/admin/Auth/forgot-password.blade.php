@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>
-        @section('title')
-            Forgot Password Page
-        @endsection
+        Forgot Password Page
     </title>
 
     <!-- General CSS Files -->
@@ -49,11 +47,11 @@
                         </div>
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h4>Forgot Password</h4>
+                                <h4>{{ __('admin.Forgot Password') }}</h4>
                             </div>
                             <div class="card-body">
                                 <p>
-                                    Forgot your password Page?
+                                    {{ __('admin.Forgot Password') }}
                                 </p>
                                 {{-- Notification for success Work --}}
                                 @if (session()->has('success'))
@@ -67,7 +65,7 @@
                                     class="needs-validation" novalidate="">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="email">Email</label>
+                                        <label for="email">{{ __('admin.Email') }}</label>
                                         <input id="email" type="email" class="form-control" name="email"
                                             tabindex="1" required autofocus>
                                         @error('email')
@@ -76,13 +74,13 @@
                                             </code>
                                         @enderror
                                         <div class="invalid-feedback">
-                                            Please fill in your email
+                                            {{ __('admin.Please fill in your email') }}
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                            SendLink
+                                            {{ __('admin.SendLink') }}
                                         </button>
                                     </div>
                                 </form>
